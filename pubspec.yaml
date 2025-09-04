@@ -1,10 +1,10 @@
 name: flutter_laranjinha_payment
 description: "Plugin não oficial flutter que faz a integração com o SDK do itaú, para pagamento com maquininhas POS Laranjinha"
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/Luiz-Carlos-de-Lima/flutter_laranjinha_payment
 
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.7.2
   flutter: ">=3.3.0"
 
 dependencies:

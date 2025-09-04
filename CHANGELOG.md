@@ -16,3 +16,7 @@
     - Optimized bitmap generation for faster performance
     - Reduced processing time when creating print content
     - Maintained consistency in text and image rendering
+
+## 1.0.3
+
+* Reduced `compileSdk` requirement to improve compatibility with older projects.
