@@ -160,7 +160,7 @@ class FlutterLaranjinhaPaymentPlugin :
         binding = newBinding
 
         binding?.addActivityResultListener { requestCode: Int, resultCode: Int, intent: Intent? ->
-            if(Activity.RESULT_OK == resultCode) {
+            if (resultCode == Activity.RESULT_OK) {
                 var responseMap: Map<String, Any?> = mapOf()
                 when (requestCode) {
                     PaymentDeeplink.REQUEST_CODE -> {
@@ -173,8 +173,11 @@ class FlutterLaranjinhaPaymentPlugin :
                         responseMap = reprintDeeplink.validateIntent(intent)
                     }
                 }
-
                 sendResultData(responseMap)
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                resultScope?.error("CANCELLED", "Operation was cancelled by user", null)
+                resultScope = null
             }
             true
         }
